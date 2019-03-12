@@ -41,7 +41,7 @@ function s:makeDefaultBehavior()
         \ !empty(g:acp_behaviorUserDefinedMeets)
     for key in keys(behavs)
       call add(behavs[key], {
-            \   'command'      : "\<C-x>\<C-u>",
+            \   'command'      : g:acp_behaviorUserDefinedCommand,
             \   'completefunc' : g:acp_behaviorUserDefinedFunction,
             \   'meets'        : g:acp_behaviorUserDefinedMeets,
             \   'repeat'       : 0,
@@ -132,6 +132,7 @@ call s:defineOption('g:acp_completeOption', '.,w,b,k')
 call s:defineOption('g:acp_completeoptPreview', 0)
 call s:defineOption('g:acp_behaviorUserDefinedFunction', '')
 call s:defineOption('g:acp_behaviorUserDefinedMeets', '')
+call s:defineOption('g:acp_behaviorUserDefinedCommand', '\<C-x>\<C-u>')
 call s:defineOption('g:acp_behaviorSnipmateLength', -1)
 call s:defineOption('g:acp_behaviorKeywordCommand', "\<C-n>")
 call s:defineOption('g:acp_behaviorKeywordLength', 2)
